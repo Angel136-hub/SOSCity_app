@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.auth.LoginFragment"
+        android:label="Login" />
+
+    <!--
+        Container con bottom navigation per il Cittadino (tab Home + Segnalazioni).
+        Sostituisce il vecchio citizenHomeFragment "singolo": Nuova Segnalazione
+        resta una destinazione separata a schermo intero, raggiunta per id da
+        dentro la tab Home (stesso pattern di impostazioniFragment lato tecnico).
+    -->
+    <fragment
+        android:id="@+id/cittadinoContainerFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.cittadino.CittadinoContainerFragment"
+        android:label="Area Cittadino" />
+
+    <fragment
+        android:id="@+id/nuovaSegnalazioneFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.cittadino.NuovaSegnalazioneFragment"
+        android:label="Nuova Segnalazione"/>
+
+    <!--
+        Destinazione Notifiche del Cittadino: schermo intero, raggiunta dal
+        bottone "Notifiche" in CitizenHomeFragment (stesso pattern di
+        nuovaSegnalazioneFragment/impostazioniFragment).
+    -->
+    <fragment
+        android:id="@+id/notificheFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.cittadino.NotificheFragment"
+        android:label="Le mie notifiche" />
+
+    <fragment
+        android:id="@+id/technicianHomeFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.tecnico.TecnicoContainerFragment"
+        android:label="Technician Home" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.auth.RegisterFragment"
+        android:label="Register" />
+
+    <!--
+        Destinazione Impostazioni (Tecnico): schermo intero con card in stile
+        coerente col resto dell'app. Raggiungibile dal bottone impostazioni in
+        HomeTabFragment. Il back stack viene gestito automaticamente dal
+        Navigation Component.
+    -->
+    <fragment
+        android:id="@+id/impostazioniFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.tecnico.ImpostazioniFragment"
+        android:label="@string/impostazioni_titolo" />
+
+    <!--
+        Destinazione Impostazioni (Cittadino): stesso pattern grafico e di
+        navigazione di impostazioniFragment lato tecnico. Raggiungibile dal
+        bottone impostazioni nell'header della Home Cittadino.
+    -->
+    <fragment
+        android:id="@+id/impostazioniCittadinoFragment"
+        android:name="it.unisannio.soscity.soscity_app.ui.cittadino.ImpostazioniCittadinoFragment"
+        android:label="@string/impostazioni_titolo" />
+
+</navigation>
