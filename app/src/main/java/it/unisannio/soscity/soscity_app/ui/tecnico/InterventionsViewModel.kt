@@ -29,9 +29,6 @@ sealed class AzioneUiState {
  * ViewModel condiviso tra HomeTabFragment, InterventiTabFragment e HomeTabFragment.
  * Estende BaseViewModel<List<Intervention>> che espone il campo _uiState / uiState.
  *
- * Sostituisce la logica di caricamento che prima era duplicata identicamente in
- * TecnicoHomeFragment e InterventiTabFragment (violazione DRY + assenza MVVM).
- *
  * Il ViewModel sopravvive ai cambi di configurazione (rotazione schermo): la lista
  * non viene ricaricata dalla rete a ogni ricreazione del Fragment.
  */
@@ -45,9 +42,7 @@ class InterventionsViewModel(
 
     /**
      * Stato del dettaglio ticket (categoria/priorita') associato al prossimo
-     * intervento mostrato in HomeTabFragment. Prima questa chiamata veniva
-     * fatta direttamente dalla Fragment tramite RepositoryProvider
-     * (violazione MVVM segnalata nell'analisi); ora passa dal ViewModel.
+     * intervento mostrato in HomeTabFragment.
      */
     private val _dettaglioTicketState = MutableStateFlow<UiState<Ticket>>(UiState.Idle)
     val dettaglioTicketState: StateFlow<UiState<Ticket>> = _dettaglioTicketState
@@ -158,7 +153,6 @@ class InterventionsViewModel(
 
     /**
      * Ordina la lista per rilevanza: IN_CORSO prima, COMPLETATO alla fine.
-     * Era duplicata identicamente in TecnicoHomeFragment e InterventiTabFragment.
      */
     private fun ordinaPerRilevanza(lista: List<Intervention>): List<Intervention> {
         return lista.sortedBy { iv ->

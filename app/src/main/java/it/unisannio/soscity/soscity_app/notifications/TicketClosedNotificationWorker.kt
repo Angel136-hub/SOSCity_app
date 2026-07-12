@@ -21,15 +21,12 @@ import it.unisannio.soscity.soscity_app.util.SessionManager
  * ticket (evento "TicketRisolto", salvato dal notification-service con
  * tipo = "EMAIL") e, in tal caso, mostra una vera notifica di sistema Android.
  *
- * Il backend non implementa un invio push reale (nessun FirebaseMessaging.send
- * da nessuna parte in notification-service): questo worker e', senza toccare
- * il backend, l'unico modo per avvisare il cittadino con una notifica di
- * sistema anche a schermata "Notifiche"/Home chiusa.
+ * Il backend non implementa un invio push reale
  *
  * IMPORTANTE: non viene inviata alcuna email reale. Il campo tipo="EMAIL" nel
  * backend identifica semplicemente, ad oggi, l'evento di chiusura ticket:
  * questo worker lo usa solo come "marcatore" per riconoscere quell'evento,
- * l'invio email vero e proprio resta (volutamente) non implementato.
+ *
  *
  * WorkManager impone un intervallo minimo di 15 minuti per il lavoro
  * periodico in background (limite di sistema Android per il risparmio
@@ -60,9 +57,7 @@ class TicketClosedNotificationWorker(
             val notifiche = NetworkClient.apiService.getNotifications()
 
             // Le notifiche di chiusura ticket sono salvate dal backend con
-            // tipo = "EMAIL" (vedi NotificationService.riceviEventoEInviaNotifica,
-            // case "TicketRisolto"): e' l'unico segnale disponibile senza
-            // modificare il backend.
+            // tipo = "EMAIL"
             val notificheChiusura = notifiche.filter { it.tipo == "EMAIL" }
 
             val prefs = applicationContext.getSharedPreferences(

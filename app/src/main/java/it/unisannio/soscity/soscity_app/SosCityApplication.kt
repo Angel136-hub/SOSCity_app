@@ -18,13 +18,10 @@ import it.unisannio.soscity.soscity_app.util.SessionManager
  *    dall'utilizzo di NotificationCompat.Builder.
  *
  * NOTA "interventi_channel": le notifiche push per il tecnico non sono
- * supportate lato backend in questa versione. Il canale viene comunque
- * registrato per conformita' con i requisiti di sistema (minSdk 26) e per
- * dimostrare il pattern corretto. Il toggle nelle Impostazioni persiste la
- * preferenza utente in SharedPreferences ma non attiva polling reale.
+ * supportate lato backend.
  *
  * NOTA "notifiche_cittadino_channel": questo canale e' invece REALMENTE
- * utilizzato (vedi TicketClosedNotificationWorker) per mostrare una notifica
+ * utilizzato per mostrare una notifica
  * di sistema quando una segnalazione del cittadino viene chiusa da un tecnico.
  */
 class SosCityApplication : Application() {

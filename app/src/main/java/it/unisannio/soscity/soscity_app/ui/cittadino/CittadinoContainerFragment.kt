@@ -27,8 +27,7 @@ import it.unisannio.soscity.soscity_app.notifications.NotificationWorkScheduler
  * Da questa versione, all'ingresso nell'area Cittadino vengono anche:
  * 1. richiesto (su Android 13+/API 33+) il permesso POST_NOTIFICATIONS,
  *    necessario per poter mostrare le notifiche di sistema di chiusura ticket;
- * 2. pianificato il controllo periodico in background (vedi
- *    NotificationWorkScheduler / TicketClosedNotificationWorker) che mostra
+ * 2. pianificato il controllo periodico in background che mostra
  *    una vera notifica Android quando una segnalazione viene chiusa.
  */
 class CittadinoContainerFragment : Fragment() {
@@ -46,8 +45,7 @@ class CittadinoContainerFragment : Fragment() {
 
     // Esito ignorato volutamente: se il permesso viene negato, l'app continua
     // a funzionare normalmente, semplicemente non potra' mostrare la
-    // notifica di sistema di chiusura ticket (TicketClosedNotificationWorker
-    // controlla comunque il permesso prima di provare a notificare).
+    // notifica di sistema di chiusura ticket.
     private val richiediPermessoNotifiche =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
 
@@ -99,7 +97,7 @@ class CittadinoContainerFragment : Fragment() {
 
     /**
      * Switcha tra tab preservando lo stato dei fragment gia' creati
-     * (hide/show invece di replace, come Gmail/WhatsApp).
+     * (hide/show invece di replace).
      */
     private fun switchTab(tag: String, creator: () -> Fragment) {
         if (tag == currentTag && childFragmentManager.findFragmentByTag(tag) != null) return

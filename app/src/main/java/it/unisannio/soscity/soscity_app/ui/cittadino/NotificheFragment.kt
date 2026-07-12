@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
  * Schermata "Le mie notifiche" del Cittadino, raggiunta dal bottone Notifiche
  * nella Home. Il backend non supporta push: la lista viene aggiornata con un
  * caricamento iniziale, pull-to-refresh manuale e un polling automatico ogni
- * 15 secondi finche' la schermata resta visibile (vedi NotificationsViewModel).
+ * 15 secondi finche' la schermata resta visibile.
  */
 class NotificheFragment : Fragment() {
 

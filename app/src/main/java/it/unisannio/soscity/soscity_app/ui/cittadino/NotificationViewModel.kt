@@ -54,9 +54,6 @@ class NotificationsViewModel(
      * e fermato in onPause() con fermaPolling(), per non consumare rete/batteria
      * quando la schermata non e' visibile.
      *
-     * NON avvolgere con launchWithIdling: e' un loop che gira finche' la
-     * schermata e' visibile (while (isActive)), il contatore dell'idling
-     * resource non tornerebbe mai a zero e Espresso andrebbe in timeout.
      */
     fun avviaPolling() {
         if (pollingJob?.isActive == true) return

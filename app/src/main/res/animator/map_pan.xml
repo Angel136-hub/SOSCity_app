@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Animazione di "pan" continuo dello sfondo mappa (imageMapBackground),
-    condivisa tra LoginFragment e RegisterFragment (in precedenza duplicata
-    identica in entrambi, vedi punto #2 del documento di refactoring).
+    condivisa tra LoginFragment e RegisterFragment.
 
     I valori valueFrom/valueTo qui sono placeholder (0): lo spostamento reale
     (deltaX/deltaY) dipende dalle dimensioni a runtime della view e dello

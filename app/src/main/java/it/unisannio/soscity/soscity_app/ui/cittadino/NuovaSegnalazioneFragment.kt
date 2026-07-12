@@ -30,7 +30,7 @@ import java.io.File
 /**
  * La Fragment gestisce solo permessi, fotocamera e posizione (API legate ad
  * Activity/Context). La validazione dei dati e la creazione del ticket sono
- * delegate a NuovaSegnalazioneViewModel (violazione MVVM corretta).
+ * delegate a NuovaSegnalazioneViewModel.
  */
 class NuovaSegnalazioneFragment : Fragment(R.layout.fragment_nuova_segnalazione) {
 

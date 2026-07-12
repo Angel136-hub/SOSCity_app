@@ -23,7 +23,7 @@ interface ApiService {
      * su QUALSIASI path diverso da q/health e q/metrics (vedi FirebaseAuthFilter.java,
      * punto 3 "Verifica token Firebase Bearer") — non ci sono eccezioni per /users
      * a livello di filtro: il fatto che la registrazione CITTADINO sia "pubblica" è
-     * una logica di autorizzazione applicata dentro UserResource (più a valle), che
+     * una logica di autorizzazione applicata dentro UserResource, che
      * però viene raggiunta solo se il filtro a monte ha già verificato un token Bearer
      * valido. Va quindi sempre passato il token Firebase ottenuto subito dopo
      * createUserWithEmailAndPassword(), anche per la registrazione CITTADINO.
@@ -74,8 +74,7 @@ interface ApiService {
      * Crea un nuovo ticket.
      * POST /tickets
      *
-     * Il body e' NuovoTicketRequest (solo i campi accettati in creazione secondo
-     * API_Contract.md), non Ticket: quest'ultimo contiene anche id/stato/date che
+     * Il body e' NuovoTicketRequest, non Ticket: quest'ultimo contiene anche id/stato/date che
      * il backend genera lui stesso e la cui deserializzazione fallisce con 400
      * se arrivano come stringa vuota.
      */
@@ -136,15 +135,8 @@ interface ApiService {
      * PUT /interventions/{id}/stato?stato=<valore>&note=<testo>
      *
      * Il backend legge "stato" come QUERY PARAMETER, non come body JSON
-     * (vedi contratto §9.6: "PUT /interventions/{id}/stato?stato=<valore>").
-     * La versione precedente mandava un body {"stato": "..."}, che il backend
-     * avrebbe semplicemente ignorato (nessun parametro stato sulla query string
-     * → 400 "Parametro stato mancante").
      *
-     * "note" (Modifica 5 backend) è stato implementato anch'esso come query
-     * param, per coerenza con "stato" — DA VERIFICARE col backend reale: se
-     * il backend si aspetta invece un body JSON {"note": "..."}, questa firma
-     * va cambiata in @Body. Retrofit non applica i default Kotlin sui metodi
+     * Retrofit non applica i default Kotlin sui metodi
      * di interfaccia: ogni chiamata deve passare "note" esplicitamente
      * (anche solo null), esattamente come già avviene per authHeader in
      * verifySession.

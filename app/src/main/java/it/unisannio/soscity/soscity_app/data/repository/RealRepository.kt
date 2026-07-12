@@ -147,7 +147,6 @@ class RealRepository : Repository {
         note: String?
     ): Result<Unit> =
     // "stato" e "note" vanno passati come query parameter, non come body JSON
-        // (vedi nota in ApiService.kt)
         safeApiCall(
             notFoundError = { AppError.InterventionNotFound(interventionId) }
         ) { apiService.updateInterventionStatus(interventionId, status, note) }

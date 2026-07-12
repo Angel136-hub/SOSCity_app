@@ -7,7 +7,7 @@ import it.unisannio.soscity.soscity_app.data.model.User
 /**
  * Gestisce la sessione utente.
  *
- * Rispetto alla versione precedente (solo in-memory), aggiunge persistenza minima:
+ * aggiunge persistenza minima:
  * uid e ruolo vengono salvati in SharedPreferences in modo che, dopo un kill di
  * processo da parte del sistema Android, l'app possa determinare che l'utente era
  * loggato senza richiedere un nuovo login (FirebaseAuth mantiene la sessione lato SDK).

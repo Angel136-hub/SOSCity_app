@@ -26,7 +26,7 @@ import java.time.LocalTime
 /**
  * Tab "Home" dell'area Cittadino, ospitata dentro CittadinoContainerFragment.
  * "Le mie segnalazioni" non e' piu' una card qui: e' diventata una tab della
- * bottom navigation (vedi CittadinoContainerFragment). "Nuova segnalazione"
+ * bottom navigation. "Nuova segnalazione"
  * non e' piu' una card qui: l'unico punto di accesso e' il FAB "+" del
  * container, per evitare due modi diversi di fare la stessa azione.
  *

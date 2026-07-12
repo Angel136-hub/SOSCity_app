@@ -12,8 +12,6 @@ import it.unisannio.soscity.soscity_app.databinding.BottomSheetNumeriEmergenzaBi
 
 /**
  * Bottom sheet dedicato ai numeri di emergenza.
- * Estratto dall'ex ImpostazioniBottomSheet per separazione concettuale:
- * i numeri di emergenza sono azioni immediate, non impostazioni.
  */
 class NumeriEmergenzaBottomSheet : BottomSheetDialogFragment() {
 

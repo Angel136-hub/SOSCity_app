@@ -96,7 +96,7 @@ class InterventionAdapter(
             // Tutta la card apre il dettaglio
             binding.cardIntervento.setOnClickListener { onCardClick(intervention) }
 
-            // Esito (senza emoji)
+            // Esito
             if (esito != null) {
                 binding.textEsitoAzione.visibility = android.view.View.VISIBLE
                 binding.textEsitoAzione.text       = esito

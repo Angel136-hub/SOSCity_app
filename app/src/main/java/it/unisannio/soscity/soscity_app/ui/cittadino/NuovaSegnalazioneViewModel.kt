@@ -13,10 +13,6 @@ import kotlinx.coroutines.launch
 /**
  * ViewModel per la creazione di una nuova segnalazione.
  *
- * Sostituisce la logica che prima viveva direttamente in
- * NuovaSegnalazioneFragment (validazione + chiamata al Repository dentro
- * il click listener, violazione MVVM segnalata nell'analisi).
- *
  * Camera, permessi e posizione GPS restano nella Fragment perche' richiedono
  * API Android legate al ciclo di vita/Context (ActivityResultLauncher,
  * LocationManager); il ViewModel si occupa solo di validare i dati raccolti

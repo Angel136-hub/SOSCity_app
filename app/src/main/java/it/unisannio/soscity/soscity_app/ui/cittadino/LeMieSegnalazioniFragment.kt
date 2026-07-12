@@ -24,7 +24,6 @@ import kotlinx.coroutines.launch
  * tutte le informazioni del ticket (tranne la foto allegata).
  *
  * La Fragment non parla piu' col Repository: osserva solo LeMieSegnalazioniViewModel
- * (violazione MVVM corretta: la logica di caricamento vive nel ViewModel).
  */
 class LeMieSegnalazioniFragment : Fragment() {
 

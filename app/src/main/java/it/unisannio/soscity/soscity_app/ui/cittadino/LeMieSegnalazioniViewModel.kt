@@ -12,9 +12,7 @@ import kotlinx.coroutines.launch
 /**
  * ViewModel per la tab "Segnalazioni" del Cittadino.
  *
- * Sostituisce la logica che prima viveva direttamente in
- * LeMieSegnalazioniFragment (chiamata al Repository dentro la View,
- * violazione MVVM segnalata nell'analisi): la Fragment ora si limita a
+ * la Fragment ora si limita a
  * osservare uiState e a invocare caricaSegnalazioni()/refresh(), sullo
  * stesso pattern gia' usato da InterventionsViewModel lato Tecnico.
  */

@@ -48,7 +48,7 @@ class TecnicoContainerFragment : Fragment() {
 
     /**
      * Switcha tra tab preservando lo stato dei fragment gia' creati
-     * (hide/show invece di replace, come Gmail/WhatsApp).
+     * (hide/show invece di replace).
      */
     private fun switchTab(tag: String, creator: () -> Fragment) {
         if (tag == currentTag && childFragmentManager.findFragmentByTag(tag) != null) return

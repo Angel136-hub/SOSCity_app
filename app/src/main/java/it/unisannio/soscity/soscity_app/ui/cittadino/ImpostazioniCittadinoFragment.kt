@@ -27,7 +27,6 @@ import it.unisannio.soscity.soscity_app.util.performLogout
  * L'unica differenza rispetto alla versione Tecnico e' l'assenza della
  * sezione "Sincronizza dati", che ha senso solo per il flusso di lavoro del
  * tecnico (aggiornamento della lista interventi).
- *
  * Raggiunta dal bottone impostazioni nell'header della Home Cittadino.
  */
 class ImpostazioniCittadinoFragment : Fragment() {

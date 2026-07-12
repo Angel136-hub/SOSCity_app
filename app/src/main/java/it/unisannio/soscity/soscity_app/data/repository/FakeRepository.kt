@@ -282,7 +282,7 @@ class FakeRepository : Repository {
                     tickets.add(updatedTicket)
                 }
 
-                // Simula la promozione automatica (Modifica 4): se esiste un altro
+                // Simula la promozione automatica: se esiste un altro
                 // intervento PIANIFICATO sullo stesso team, lo promuove a IN_CORSO.
                 val prossimo = interventions
                     .filter { it.teamId == intervention.teamId && it.statoLavoro == "PIANIFICATO" }

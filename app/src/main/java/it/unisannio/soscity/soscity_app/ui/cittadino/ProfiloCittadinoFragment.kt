@@ -15,6 +15,7 @@ import it.unisannio.soscity.soscity_app.util.performLogout
 /**
  * Tab "Profilo" dell'area Cittadino, ospitata dentro CittadinoContainerFragment.
  * Stesso pattern di ProfiloTabFragment lato tecnico.
+ *
  */
 class ProfiloCittadinoFragment : Fragment() {
 

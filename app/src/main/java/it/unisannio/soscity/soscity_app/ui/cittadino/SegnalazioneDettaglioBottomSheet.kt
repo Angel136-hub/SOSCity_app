@@ -25,7 +25,6 @@ import java.time.format.DateTimeFormatter
  * LeMieSegnalazioniFragment (tab "Segnalazioni").
  *
  * Mostra tutte le informazioni del ticket TRANNE la foto allegata
- * (fotoAllegata), volutamente esclusa su richiesta.
  */
 class SegnalazioneDettaglioBottomSheet : BottomSheetDialogFragment() {
 

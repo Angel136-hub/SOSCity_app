@@ -6,7 +6,7 @@ import it.unisannio.soscity.soscity_app.R
 
 /**
  * Enum che rappresenta i possibili stati di un intervento.
- * Centralizza i valori che prima erano stringhe letterali ripetute in piu' file.
+ * Centralizza i valori.
  */
 enum class StatoLavoro {
     PIANIFICATO,

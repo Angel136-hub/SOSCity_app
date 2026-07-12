@@ -4,8 +4,7 @@ import it.unisannio.soscity.soscity_app.R
 
 /**
  * Enum che rappresenta gli stati del ciclo di vita di un ticket.
- * Valori allineati all'enum StatoTicket del modulo shared-common del backend
- * (vedi docs/API_Contract.md - Ticket Lifecycle).
+ * Valori allineati all'enum StatoTicket del modulo shared-common del backend.
  */
 enum class StatoTicket {
     APERTO,

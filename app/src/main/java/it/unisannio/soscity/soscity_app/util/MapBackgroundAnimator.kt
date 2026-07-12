@@ -10,11 +10,7 @@ import it.unisannio.soscity.soscity_app.R
 /**
  * Avvia l'animazione di "pan" continuo dello sfondo mappa (un'immagine più
  * grande della view contenitore, che scorre avanti e indietro all'infinito).
- *
- * In precedenza questa logica era duplicata identica in LoginFragment e
- * RegisterFragment (vedi punto #2 del documento di refactoring): stesso
- * calcolo dei delta, stessi parametri (45000ms, REVERSE, INFINITE,
- * LinearInterpolator). I parametri costanti vivono ora in
+ * I parametri costanti vivono  in
  * res/animator/map_pan.xml; qui resta solo il calcolo runtime dei delta,
  * che non può vivere in XML perché dipende dalle dimensioni effettive
  * della view a schermo.

@@ -9,9 +9,7 @@ import it.unisannio.soscity.soscity_app.ui.common.UiState
 import kotlinx.coroutines.launch
 
 /**
- * ViewModel per la schermata Impostazioni. Sostituisce la chiamata diretta
- * al Repository che prima avveniva dentro il click listener di "Sincronizza"
- * in ImpostazioniFragment (violazione MVVM segnalata nell'analisi).
+ * ViewModel per la schermata Impostazioni.
  */
 class ImpostazioniViewModel(
     private val repository: Repository

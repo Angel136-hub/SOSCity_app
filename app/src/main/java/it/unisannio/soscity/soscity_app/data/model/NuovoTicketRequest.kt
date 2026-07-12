@@ -2,7 +2,7 @@ package it.unisannio.soscity.soscity_app.data.model
 
 /**
  * Body inviato in POST /tickets. Contiene solo i campi che il contratto
- * backend si aspetta in creazione (vedi docs/API_Contract.md).
+ * backend si aspetta in creazione.
  * Ticket.kt NON va usato come body di richiesta: contiene anche id/stato/date,
  * che sono generati dal server e la cui deserializzazione (UUID, enum, LocalDateTime)
  * fallisce con 400 se il client manda stringhe vuote.

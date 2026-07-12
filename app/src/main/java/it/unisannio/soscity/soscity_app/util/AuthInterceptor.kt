@@ -7,13 +7,10 @@ import okhttp3.Response
 
 /**
  * Interceptor che allega il Firebase ID Token a ogni richiesta HTTP.
- *
- * Rispetto alla versione precedente che leggeva un token statico da SessionManager,
- * questa versione richiede sempre un token fresco a FirebaseAuth prima di ogni chiamata.
+ * richiede sempre un token fresco a FirebaseAuth prima di ogni chiamata.
  * Il metodo getIdToken(false) restituisce il token corrente se ancora valido (scadenza
  * Firebase: 1 ora), oppure ne ottiene automaticamente uno nuovo senza bisogno di logout.
- * Tasks.await() blocca il thread OkHttp corrente (non il Main thread): e' il pattern
- * documentato per gli Interceptor che necessitano di operazioni asincrone.
+ * Tasks.await() blocca il thread OkHttp corrente (non il Main thread).
  */
 class AuthInterceptor : Interceptor {
 

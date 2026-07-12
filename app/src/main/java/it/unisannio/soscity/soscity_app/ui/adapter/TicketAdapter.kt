@@ -21,10 +21,10 @@ import java.time.format.DateTimeFormatter
 /**
  * Adapter per la lista "Le mie segnalazioni" del Cittadino.
  * Usa ViewBinding (ItemTicketBinding) e le enum Categoria/StatoTicket per
- * evitare literal di stringa sparsi nel bind (stesso pattern di InterventionAdapter).
+ * evitare literal di stringa sparsi nel bind.
  *
  * onItemClick viene invocato al tap su una card, per mostrare il dettaglio
- * della segnalazione (vedi SegnalazioneDettaglioBottomSheet).
+ * della segnalazione.
  */
 class TicketAdapter(
     private var tickets: List<Ticket> = emptyList(),

@@ -24,15 +24,9 @@ import kotlinx.coroutines.launch
 /**
  * Schermata Impostazioni del Tecnico.
  *
- * Riscritta con un layout custom (card arrotondate, header blu, stessa
- * palette del resto dell'app) al posto del vecchio PreferenceFragmentCompat,
- * per uniformare graficamente questa schermata con tutte le altre e con la
- * versione gemella lato Cittadino (ImpostazioniCittadinoFragment).
- *
- * La logica resta la stessa di prima:
+ * La logica:
  * - pref_notifiche / pref_tema restano persistite nelle SharedPreferences di
- *   default (stesse chiavi usate in precedenza da preferences_tecnico.xml),
- *   quindi il comportamento non cambia, solo l'aspetto.
+ *   default
  * - la sincronizzazione dati passa dal ImpostazioniViewModel (MVVM), non dal
  *   click listener direttamente.
  */

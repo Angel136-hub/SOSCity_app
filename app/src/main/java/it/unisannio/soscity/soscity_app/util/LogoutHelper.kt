@@ -9,7 +9,6 @@ import it.unisannio.soscity.soscity_app.R
 
 /**
  * Unico punto di codice per il logout del tecnico.
- * Sostituisce le 4+ copie identiche del blocco logout sparse tra Fragment diversi.
  * Richiamato da tutti i Fragment che espongono un'azione di logout.
  */
 fun NavController.performLogout() {
@@ -22,8 +21,7 @@ fun NavController.performLogout() {
 }
 
 /**
- * Dialogo di conferma logout, unico anche questo (era duplicato identico in
- * ogni schermata Impostazioni/Profilo). [onConferma] viene eseguito solo se
+ * Dialogo di conferma logout, unico. [onConferma] viene eseguito solo se
  * l'utente conferma l'uscita.
  */
 fun mostraDialogoLogout(context: Context, onConferma: () -> Unit) {

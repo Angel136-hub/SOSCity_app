@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * Punto unico per avviare il controllo periodico in background delle
- * notifiche di chiusura ticket (vedi TicketClosedNotificationWorker).
+ * notifiche di chiusura ticket.
  *
  * schedule() va chiamato quando un cittadino entra nell'area Cittadino
  * (CittadinoContainerFragment). ExistingPeriodicWorkPolicy.KEEP fa si' che
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
  *
  * Non serve una cancel() esplicita al logout: il Worker stesso, ad ogni
  * esecuzione, controlla se esiste ancora un utente Firebase loggato e non
- * fa nulla in caso contrario (vedi TicketClosedNotificationWorker.doWork()).
+ * fa nulla in caso contrario.
  */
 object NotificationWorkScheduler {
 

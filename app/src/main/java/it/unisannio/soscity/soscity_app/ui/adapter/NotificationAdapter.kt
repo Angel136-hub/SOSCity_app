@@ -18,7 +18,6 @@ import java.time.format.DateTimeFormatter
 
 /**
  * Adapter per la lista "Le mie notifiche" del Cittadino.
- * Stesso pattern (ViewBinding + DiffUtil + enum) di TicketAdapter/InterventionAdapter.
  */
 class NotificationAdapter(
     private var notifications: List<Notification> = emptyList()
